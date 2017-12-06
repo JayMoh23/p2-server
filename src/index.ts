@@ -1,13 +1,18 @@
 import * as express from 'express';
 import * as path from 'path';
+import { procedure } from './config/db/index';
+
 
 const app = express();
 
 app 
     //to serve dist 
-    .use(express.static(path.join(__dirname + '/../dist')))
+    //GET all hotels
     .get('/*', (req: express.Request, res: express.Response) => {
-        res.sendFile(path.join(__dirname + '/../dist/index.html'));
+        procedure("spGetHotels")
+        .then((hotels) => {
+            res.json(hotels[0])
+        })
     });
 
 app.listen(process.env.PORT || 3000, () => {
