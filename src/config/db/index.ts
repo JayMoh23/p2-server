@@ -4,10 +4,10 @@ import { isArray } from 'lodash';
 export default () => {};
 
 const poolConfig: PoolConfig = {
-    host: '',
-    user: '',
-    password: '',
-    database: ''
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 };
 
 export const pool = createPool(poolConfig);
