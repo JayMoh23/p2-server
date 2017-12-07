@@ -1,6 +1,7 @@
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 import * as path from 'path';
-import { procedure } from './config/db/index';
+import { procedure}  from './config/db/index';
 
 
 const app = express();
