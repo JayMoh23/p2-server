@@ -4,11 +4,14 @@ import * as path from 'path';
 import { procedure}  from './config/db/index';
 import * as axios from 'axios';
 import { formatYelpSearchUrl } from './middleware/utils'
+import * as algoliasearch from "algoliasearch";
 
 const exp = require('express')
 const bp = require('body-parser')
 const app = express();
 const apiKey = 'RrgYj2_KwycE8D9-H3B6P1QuWGLSy1Cloc5RtWwVzvl_pt0_4QUO8VJv7y1KjItWOmQccm9_ZaWqwislMaZkxCJiIQQEr5FXsYK3A3uBaw_l-5so2fOLyoF2PbguWnYx';
+
+export const client = algoliasearch("WQ80RLET89", "333d10b32930a9c18eb3076965932bb05");
 
 app.use(bp.json())
 app.use(bp.urlencoded({extended: true}))
