@@ -2,12 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mysql_1 = require("mysql");
 const lodash_1 = require("lodash");
-exports.default = () => { };
+exports.default = () => {
+    console.log(process.env.HOST);
+};
 const poolConfig = {
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    database: process.env.DATABASE,
+    connectionLimit: 5
 };
 exports.pool = mysql_1.createPool(poolConfig);
 const formatArguments = (args = []) => {
