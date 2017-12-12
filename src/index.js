@@ -4,10 +4,12 @@ const express = require("express");
 const index_1 = require("./config/db/index");
 const axios = require("axios");
 const utils_1 = require("./middleware/utils");
+const algoliasearch = require("algoliasearch");
 const exp = require('express');
 const bp = require('body-parser');
 const app = express();
 const apiKey = 'RrgYj2_KwycE8D9-H3B6P1QuWGLSy1Cloc5RtWwVzvl_pt0_4QUO8VJv7y1KjItWOmQccm9_ZaWqwislMaZkxCJiIQQEr5FXsYK3A3uBaw_l-5so2fOLyoF2PbguWnYx';
+exports.client = algoliasearch("WQ80RLET89", "333d10b32930a9c18eb3076965932bb05");
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 /****DISHES ****/
